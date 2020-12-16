@@ -11,11 +11,9 @@ RUN sudo apt-get -o Acquire::ForceIPv4=true update \
 && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" \
 && sudo apt-get -o Acquire::ForceIPv4=true update \
 && sudo apt-get install -y docker-ce-cli \
-&& \
-groupadd -g 999 docker && \
-usermod -aG docker jenkins && \
-\
-apt-get clean && \
-rm -rf /var/lib/apt/lists/*
+&& groupadd -g 999 docker \
+&& usermod -aG docker jenkins \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/*
 
 USER jenkins
