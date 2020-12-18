@@ -12,7 +12,7 @@ RUN \
     apt-get -o Acquire::ForceIPv4=true update && \
     apt-get install -y docker-ce-cli && \
     \
-    groupadd -g 999 docker && \
+    groupadd -g 412 docker && \
     usermod -aG docker jenkins && \
     \
     apt-get clean && \
